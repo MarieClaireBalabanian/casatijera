@@ -1,0 +1,40 @@
+{% extends "template.html" %}
+
+{% block content %}
+<style>
+#content form {
+	margin:12px 0 36px 250px;
+	text-align:center;
+	font-size:12px;
+ }
+#content p { width:800px;}
+
+#content form textarea { margin: 0 0 12px 0;}
+
+</style>
+
+{% if thankyou %}
+<p style="width:800px;">Thanks for getting in touch with us!</p>
+{% else %}
+
+	{% if error %}
+	<p>Please complete the entire form!
+	{% else %}
+	<p>For information (or if you just want to say hello), you can use the form on this page, or write to "info" at "casatijera.com".
+	{% end %}
+	</p>
+
+<form id="contactform" method=post action="">
+<i>Your Name:</i><br>
+<input name="name" type="text" size="30" value="{{name}}" /><br /><br />
+
+<i>Your email or phone:</i><br>
+<input name="contact" type="text" size="30" value="{{contact}}" /><br /><br/>
+
+<i>A brief message:</i><br />
+<textarea name="message" cols="40" rows="10">{{message}}</textarea><br />
+<input type="submit" value="Send" />
+</form>
+{% end %}
+
+{% end %}

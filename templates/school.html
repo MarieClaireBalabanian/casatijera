@@ -1,0 +1,182 @@
+<html>
+<head>
+	<title>La Casa Tijera</title>
+
+<style type="text/css">
+
+/*GENERIC CLEAR SCRIPT:*/
+html, body, div, span, applet, object, iframe,h1, h2, h3, h4, h5, h6, p, blockquote, pre,a, abbr, acronym, address, big, cite, code,del, dfn, em, font, img, ins, kbd, q, s, samp,small, strike, strong, sub, sup, tt, var,dl, dt, dd, ol, ul, li,fieldset, form, label, legend,table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;padding: 0;border: 0;outline: 0;font-weight: inherit;
+	font-style: inherit;font-size: 100%;font-family: inherit;vertical-align: baseline;}
+/* remember to define focus styles! */
+:focus {outline: 0;}
+body {line-height: 1;color: black;background: white;}
+ol, ul {list-style: none;}
+/* tables still need 'cellspacing="0"' in the markup */
+table {	border-collapse: separate;	border-spacing: 0;}
+caption, th, td {	text-align: left;font-weight: normal;}
+blockquote:before, blockquote:after,
+q:before, q:after {	content: "";}
+blockquote, q {	quotes: "" "";}
+
+/* END OF CLEAR SCRIPT */
+
+body {
+text-align: center;
+font-family:"Trebuchet MS",Arial,Sans;
+color:#65240B;
+}
+
+a:link { color:#65240B;text-decoration:none;}
+a:visited {color:#65240B;text-decoration:none;}
+a:active {color:#65240B;text-decoration:underline;}
+a:hover {color:#65240B;text-decoration:underline;}
+
+#container{
+margin:61px auto;
+width:800px;
+}
+
+#header {
+/* width:800px; */
+margin:12px;
+text-align:left;
+}
+
+	#header h1{
+	font-size:24px;
+	font-weight:normal;
+	}
+	#header img{
+	position:relative;top:6px;
+	}
+
+#content {
+text-align:left;
+margin: 0 0 12px 0;
+}
+
+#content img,form { display:inline;float:left; }
+
+#content p {
+/*width:125px; float:right;*/
+margin:12px; padding:6px;
+border-left:2px solid #CB750D;
+}
+
+
+#nav {float:right;font-size:12px;clear:both;}
+#nav li {display:inline;}
+
+#footer{
+clear:both;
+margin: 12px;
+font-size:12px;
+}
+	#footer li {display:inline;margin:0 12px;}
+
+</style>
+
+<link type="text/css" rel="stylesheet" href="/static/slider.css" /> 
+
+<script type="text/javascript" src="/static/jquery-1.4.4.min.js"></script> 
+<script type="text/javascript" src="/static/jquery.jshowoff.min.js"></script> 
+
+<script type="text/javascript">
+
+    $(document).ready( function(){
+        $('#tabs').jshowoff( {'links':false, 'controls':false, 'effect':'slideLeft'})
+        });
+
+    /*
+    $(document).ready( function(){
+        $("#slider").easySlider({auto:true,continuous:true,speed:1500});
+        });
+    */
+</script>
+
+</head>
+
+<body>
+<div id="container" style="text-align:center;">
+	<div id="header">
+		<h1><img src="/static/header.jpg" /></h1>
+	</div>
+
+
+    <div id="slider">
+        <ul id="tabs">
+            {% for img in imgs %}
+            <li> <img src="/static/school/{{ img }}" /> </li>
+            {% end %}
+        </ul>
+    </div>
+
+	<ul id="footer" >
+	<li><a href="/">HOME</a></li>
+	<li><a href="/tour/1">TOUR</a></li>
+	<li><a href="/contact">CONTACT</a></li>
+    <li>|</li>
+	<li><a href="/school">OAXACA EDUCATIONAL FOUNDATION</a></li>
+	</ul>
+
+	<div id="content">
+
+
+<p>
+Oaxaca is rich with culture. Yet, at the same time, it is one of Mexico’ s poorest states.
+The regions illiteracy rate is a staggering 22.8%. That’ s where the Oaxaca Educational
+Foundation can make a difference.
+</p>
+
+<p>
+We are establishing a school in partnership with the community of Vigia, in the
+municipality of San Pedro Pochutla, Oaxaca. Many of the children here endure difficult
+schoolroom conditions like extremely hot temperatures, primitive sanitation, parasitic
+infestation, unhygienic surroundings, and chronic poverty. Other schools lack teachers
+and appropriate curricula. We want to help Vigia build a stronger community through
+better schools.
+</p>
+
+<p>
+The school in Vigia will welcome children from 3 to 5 years old. The preschool years are
+a time of critical brain development, and during that period parents should be especially
+involved in their child’ s education. We hope that the children in our classes will become
+lifelong learners, excelling both academically and ultimately outside of the classroom.
+Our preschool in Oaxaca will help develop the thoughts, feelings, and skills of Mexico’ s
+next generation.
+</p>
+
+<p>
+Schools must focus on developing the whole child, and the school environment must
+build upon the foundations that children bring from their homes and communities,
+respecting their unique circumstances. The physical, social, aesthetic, spiritual, and
+cognitive needs of each child are inseparable from one another and are equally important.
+With that in mind, the Oaxaca Educational Foundation endeavors to provide the children
+of Vigia with an environment that enables them to become creative, competent, and
+responsible individuals.
+</p>
+
+
+
+	</div>
+
+	<div id="nav">
+	{% block nav %}{% end %}
+	</div>
+
+
+</div>
+<!--
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-1803045-7");
+pageTracker._trackPageview();
+</script>
+-->
+</body>
+
+</html>

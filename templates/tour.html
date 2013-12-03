@@ -1,0 +1,10 @@
+{% extends "template.html" %}
+
+{% block nav %}
+<ul id="nav">
+<li>{% if prevlink %}<a href="/tour/{{ prevlink }}">PREV</a> {% else %} &nbsp; {% end %}
+ {% if nextlink %}<a href="/tour/{{ nextlink }}">NEXT</a> {% else %} &nbsp; {% end %}</li>
+</ul>
+
+{% end %}
+
